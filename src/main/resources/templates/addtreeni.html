@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Treeni</title>
+</head>
+<body>
+    <h2>Add New Treeni</h2>
+    <form action="#" th:action="@{/savetreeni}" th:object="${treeni}" method="post">
+        <p>Nimi: <input type="text" th:field="*{nimi}" required/></p>
+        <p>Viikonpäivä: <input type="text" th:field="*{viikonpaiva}" required/></p>
+        <p>Kesto: <input type="text" th:field="*{kesto}" required/></p>
+        <p>Kuvaus: <input type="text" th:field="*{kuvaus}" required/></p>
+        <p><input type="submit" value="Add Treeni"/></p>
+    </form>
+</body>
+<a href="/Etusivu">takaisin etusivulle</a>
+</html>

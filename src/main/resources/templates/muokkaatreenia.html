@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Edit Book</title>
+</head>
+<body>
+<h2>muokkaa treeeniä</h2>
+
+<form th:action="@{/updatetreeni}" th:object="${treeni}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <p>Nimi: <input type="text" th:field="*{nimi}" required/></p>
+
+    <p>Viikonpäivä: <input type="text" th:field="*{viikonpaiva}" required/></p>
+
+    <p>Kesto: <input type="text" th:field="*{kesto}" required/></p>
+    
+    <p>Kuvaus: <input type="text" th:field="*{kuvaus}" required/></p>
+
+
+
+
+
+    <button type="submit">muokkaa treeniä</button>
+</form>
+
+<a href="/Etusivu">takaisin etusivulle</a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Treeni</title>
+</head>
+<body>
+   <!-- <h1>Hello <span sec:authentication="name"></span>!</h1>-->
+    <table border="1">
+        <thead>
+          <tr>
+            <th>nimi</th>
+            <th>viikonpäivä</th>
+            <th>kesto</th>
+            <th>kuvaus</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iterate over the list of books -->
+          <tr th:each="treeni : ${treenis}">
+            <td th:text="${treeni.nimi}"></td>
+            <td th:text="${treeni.viikonpaiva}"></td>
+            <td th:text="${treeni.kesto}"></td>
+            <td th:text="${treeni.kuvaus}"></td>
+
+            <td><a th:href="@{'/poistatreeni/' + ${treeni.id}}">poista</a></td>
+            <td><a th:href="@{'/muokkaatreenia/' + ${treeni.id}}">muokkaa</a></td>
+          </tr>   
+        </tbody>
+      </table>
+      <td><a href="/addtreeni">lisää treeni</a></td>
+     
+
+</body>
+</html>
