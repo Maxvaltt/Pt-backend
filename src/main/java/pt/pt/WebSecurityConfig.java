@@ -23,6 +23,7 @@ public class WebSecurityConfig {
         @Bean
         public SecurityFilterChain configure(HttpSecurity http)
                         throws Exception {
+                http.csrf().disable();
                 http
                                 .authorizeHttpRequests(authorize -> authorize
                                                 .requestMatchers("/treenis").permitAll()
